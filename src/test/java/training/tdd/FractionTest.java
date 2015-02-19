@@ -22,4 +22,13 @@ public class FractionTest {
 
       assertEquals(expected, result);
    }
+
+   @Test
+   public void canAddZeroAndNonZero() {
+      Fraction expected = new Fraction(3);
+
+      Fraction result = new Fraction(0).plus(new Fraction(3));
+
+      assertEquals(expected, result);
+   }
 }

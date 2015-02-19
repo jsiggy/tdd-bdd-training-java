@@ -8,6 +8,8 @@ public class Fraction {
    }
 
    public Fraction plus(Fraction fraction) {
+      if (fraction.integerValue != 0)
+         return fraction;
       return this;
    }
 
