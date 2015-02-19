@@ -12,11 +12,12 @@ public class Fraction {
    }
 
    public Fraction(int numerator, int denominator) {
+      this.integerValue = numerator;
       this.denominator = denominator;
    }
 
    public Fraction plus(Fraction that) {
-      return new Fraction(this.integerValue + that.integerValue);
+      return new Fraction(this.integerValue + that.integerValue, this.denominator);
    }
 
    @Override public String toString() {
