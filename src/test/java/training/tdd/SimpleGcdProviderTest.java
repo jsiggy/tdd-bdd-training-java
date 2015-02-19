@@ -14,6 +14,15 @@ public class SimpleGcdProviderTest {
       assertEquals(expected, actual);
    }
 
+   @Test
+   public void shouldAlwaysReturnAPositiveResult() {
+      int expected = 2;
+
+      int actual = createGcdProvider().gcd(-6, -44);
+
+      assertEquals(expected, actual);
+   }
+
    private SimpleGcdProvider createGcdProvider() {
       return new SimpleGcdProvider();
    }
