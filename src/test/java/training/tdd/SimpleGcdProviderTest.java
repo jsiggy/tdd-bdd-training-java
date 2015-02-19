@@ -7,6 +7,14 @@ import static org.junit.Assert.*;
 public class SimpleGcdProviderTest {
    @Test
    public void canCalculateGcd() {
-      assertEquals(2, new SimpleGcdProvider().gcd(6, 4));
+      int expected = 2;
+
+      int actual = createGcdProvider().gcd(6, 4);
+
+      assertEquals(expected, actual);
+   }
+
+   private SimpleGcdProvider createGcdProvider() {
+      return new SimpleGcdProvider();
    }
 }
