@@ -3,11 +3,11 @@ package training.tdd;
 import lombok.EqualsAndHashCode;
 import lombok.Setter;
 
-@EqualsAndHashCode
+@EqualsAndHashCode(exclude = "gcdProvider")
 public class Fraction {
    private int numerator;
    private int denominator;
-   @Setter GcdProvider gcdProvider;
+   @Setter GcdProvider gcdProvider = new SimpleGcdProvider();
 
    public Fraction(int numerator) {
       this(numerator, 1);

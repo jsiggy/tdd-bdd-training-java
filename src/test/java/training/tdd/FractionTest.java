@@ -106,4 +106,11 @@ public class FractionTest {
 
       assertEquals(new Fraction(3, 2), reducedResult);
    }
+
+   @Test
+   public void shouldDefaultToNonNullGcdProvider() {
+      Fraction fraction = new Fraction(5, 10);
+      Fraction expected = fraction.reduce();
+      assertNotNull(expected);
+   }
 }
