@@ -103,6 +103,15 @@ public class FractionTest {
       assertEquals(expected, result);
    }
 
+   @Test
+   public void shouldReduceDenominatorTo1WhenResultIsZero() {
+      Fraction expected = new Fraction(0, 1);
+
+      Fraction result = new Fraction(-1, 3).plus(new Fraction(1, 3));
+
+      assertEquals(expected, result);
+   }
+
    @Test(expected = IllegalArgumentException.class)
    public void handlesDivideByZeroError() {
       new Fraction(1, 3).plus(new Fraction(8, 0));
