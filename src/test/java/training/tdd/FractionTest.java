@@ -76,4 +76,13 @@ public class FractionTest {
 
       assertEquals(expected, result);
    }
+
+   @Test
+   public void canAddWholeNumberAndFraction() {
+      Fraction expected = new Fraction(5, 4);
+
+      Fraction result = new Fraction(1).plus(new Fraction(1, 4));
+
+      assertEquals(expected, result);
+   }
 }
