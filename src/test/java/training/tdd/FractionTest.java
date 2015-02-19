@@ -100,7 +100,7 @@ public class FractionTest {
    public void canReduceAFraction() {
       Fraction fraction = new Fraction(6, 4);
       fraction.gcdProvider = mock(GcdProvider.class);
-      when(fraction.gcdProvider.gcd()).thenReturn(2);
+      when(fraction.gcdProvider.gcd(6, 4)).thenReturn(2);
 
       Fraction reducedResult = fraction.reduce();
 
