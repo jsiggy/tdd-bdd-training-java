@@ -10,32 +10,6 @@ import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
 public class FractionTest {
-   @Test
-   public void canAddZeroAndZero() {
-      Fraction expected = new Fraction(0);
-
-      Fraction result = new Fraction(0).plus(new Fraction(0));
-
-      assertEquals(expected, result);
-   }
-
-   @Test
-   public void canAddNonZeroAndZero() {
-      Fraction expected = new Fraction(5);
-
-      Fraction result = new Fraction(5).plus(new Fraction(0));
-
-      assertEquals(expected, result);
-   }
-
-   @Test
-   public void canAddZeroAndNonZero() {
-      Fraction expected = new Fraction(3);
-
-      Fraction result = new Fraction(0).plus(new Fraction(3));
-
-      assertEquals(expected, result);
-   }
 
    @Test
    public void canAddAnyIntegers() {
@@ -65,15 +39,6 @@ public class FractionTest {
    }
 
    @Test
-   public void shouldOutputImproperFractionRatherThanProper() {
-      Fraction expected = new Fraction(7, 5);
-
-      Fraction result = new Fraction(4, 5).plus(new Fraction(3, 5));
-
-      assertEquals(expected, result);
-   }
-
-   @Test
    public void canAddTwoFractionsWithDifferentDenominatorsNoReductionNeeded() {
       Fraction expected = new Fraction(5, 6);
 
@@ -91,11 +56,6 @@ public class FractionTest {
       assertEquals(expected, result);
    }
 
-   @Test(expected = IllegalArgumentException.class)
-   public void handlesDivideByZeroError() {
-      new Fraction(1, 3).plus(new Fraction(8, 0));
-   }
-
    @Test
    public void canReduceAFraction() {
       Fraction fraction = new Fraction(8, 4);
@@ -108,19 +68,24 @@ public class FractionTest {
    }
 
    @Test
-   public void canAddTwoFractionsWithSameDenominatorAndReduce() {
-      Fraction expected = new Fraction(5, 2);
-
-      Fraction result = new Fraction(5, 4).plus(new Fraction(5, 4));
-
-      assertEquals(expected, result);
-   }
-
-   @Test
    public void canAddTwoFractionsWithDifferentDenominatorsAndReduce() {
       Fraction expected = new Fraction(3, 4);
 
       Fraction result = new Fraction(1, 12).plus(new Fraction(2, 3));
+
+      assertEquals(expected, result);
+   }
+
+   @Test(expected = IllegalArgumentException.class)
+   public void handlesDivideByZeroError() {
+      new Fraction(1, 3).plus(new Fraction(8, 0));
+   }
+
+   @Test
+   public void shouldOutputImproperFractionRatherThanProper() {
+      Fraction expected = new Fraction(7, 5);
+
+      Fraction result = new Fraction(4, 5).plus(new Fraction(3, 5));
 
       assertEquals(expected, result);
    }
