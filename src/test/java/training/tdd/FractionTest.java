@@ -94,6 +94,15 @@ public class FractionTest {
       assertEquals(expected, result);
    }
 
+   @Test
+   public void shouldAlwaysConvertNegativeOverNegativeToPositive() {
+      Fraction expected = new Fraction(5, 6);
+
+      Fraction result = new Fraction(-1, -2).plus(new Fraction(-1, -3));
+
+      assertEquals(expected, result);
+   }
+
    @Test(expected = IllegalArgumentException.class)
    public void handlesDivideByZeroError() {
       new Fraction(1, 3).plus(new Fraction(8, 0));
