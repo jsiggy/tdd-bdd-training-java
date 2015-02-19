@@ -1,11 +1,13 @@
 package training.tdd;
 
 import lombok.EqualsAndHashCode;
+import lombok.Setter;
 
 @EqualsAndHashCode
 public class Fraction {
    private int numerator;
    private int denominator;
+   @Setter GcdProvider gcdProvider;
 
    public Fraction(int numerator) {
       this(numerator, 1);
@@ -28,5 +30,9 @@ public class Fraction {
 
    @Override public String toString() {
       return numerator + "/" + denominator;
+   }
+
+   public Fraction reduce() {
+      return new Fraction(numerator / gcdProvider.gcd(), denominator / gcdProvider.gcd());
    }
 }

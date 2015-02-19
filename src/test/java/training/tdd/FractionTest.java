@@ -1,9 +1,14 @@
 package training.tdd;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.runners.MockitoJUnitRunner;
 
 import static org.junit.Assert.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
+@RunWith(MockitoJUnitRunner.class)
 public class FractionTest {
    @Test
    public void canAddZeroAndZero() {
@@ -89,5 +94,16 @@ public class FractionTest {
    @Test(expected = IllegalArgumentException.class)
    public void handlesDivideByZeroError() {
       new Fraction(1, 3).plus(new Fraction(8, 0));
+   }
+
+   @Test
+   public void canReduceAFraction() {
+      Fraction fraction = new Fraction(6, 4);
+      fraction.gcdProvider = mock(GcdProvider.class);
+      when(fraction.gcdProvider.gcd()).thenReturn(2);
+
+      Fraction reducedResult = fraction.reduce();
+
+      assertEquals(new Fraction(3, 2), reducedResult);
    }
 }
