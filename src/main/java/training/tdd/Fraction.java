@@ -22,10 +22,7 @@ public class Fraction {
       if (this.denominator == 0 || that.denominator == 0)
          throw new IllegalArgumentException("Cannot add illegal fractions(zero divisor):" + this + that);
 
-      if (this.denominator != that.denominator)
-         return new Fraction((this.numerator * that.denominator) + (this.denominator * that.numerator), this.denominator * that.denominator).reduce();
-      else
-         return new Fraction((this.numerator * that.denominator) + (this.denominator * that.numerator), this.denominator * that.denominator).reduce();
+      return new Fraction((this.numerator * that.denominator) + (this.denominator * that.numerator), this.denominator * that.denominator).reduce();
    }
 
    @Override public String toString() {
