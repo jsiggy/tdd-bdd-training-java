@@ -16,9 +16,18 @@ public class SimpleGcdProviderTest {
 
    @Test
    public void shouldAlwaysReturnAPositiveResult() {
-      int expected = 2;
+      int expected = 5;
 
-      int actual = createGcdProvider().gcd(-6, -44);
+      int actual = createGcdProvider().gcd(-10, -25);
+
+      assertEquals(expected, actual);
+   }
+
+   @Test
+   public void shouldReturnAbsoluteValueOfOriginalNumberForGcdOfAnythingAndZero() {
+      int expected = 7;
+
+      int actual = createGcdProvider().gcd(-7, 0);
 
       assertEquals(expected, actual);
    }
