@@ -67,4 +67,13 @@ public class FractionTest {
 
       assertEquals(expected, result);
    }
+
+   @Test
+   public void canAddTwoFractionsWithDifferentDenominatorsNoReductionNeeded() {
+      Fraction expected = new Fraction(5, 6);
+
+      Fraction result = new Fraction(1, 3).plus(new Fraction(1, 2));
+
+      assertEquals(expected, result);
+   }
 }
