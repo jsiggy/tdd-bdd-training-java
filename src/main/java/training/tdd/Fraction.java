@@ -5,8 +5,8 @@ import lombok.Setter;
 
 @EqualsAndHashCode(exclude = "gcdProvider")
 public class Fraction {
-   private int numerator;
-   private int denominator;
+   private final int numerator;
+   private final int denominator;
    @Setter GcdProvider gcdProvider = new SimpleGcdProvider();
 
    public Fraction(int numerator) {
@@ -23,7 +23,7 @@ public class Fraction {
          throw new IllegalArgumentException("Cannot add illegal fractions(zero divisor):" + this + that);
 
       if (this.denominator != that.denominator)
-         return new Fraction((this.numerator * that.denominator) + (this.denominator * that.numerator), this.denominator * that.denominator);
+         return new Fraction((this.numerator * that.denominator) + (this.denominator * that.numerator), this.denominator * that.denominator).reduce();
       else
          return new Fraction(this.numerator + that.numerator, this.denominator).reduce();
    }
