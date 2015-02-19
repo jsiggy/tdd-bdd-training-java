@@ -85,4 +85,9 @@ public class FractionTest {
 
       assertEquals(expected, result);
    }
+
+   @Test(expected = IllegalArgumentException.class)
+   public void handlesDivideByZeroError() {
+      new Fraction(1, 3).plus(new Fraction(8, 0));
+   }
 }

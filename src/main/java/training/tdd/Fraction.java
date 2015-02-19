@@ -17,6 +17,9 @@ public class Fraction {
    }
 
    public Fraction plus(Fraction that) {
+      if (this.denominator == 0 || that.denominator == 0)
+         throw new IllegalArgumentException("Cannot add illegal fractions(zero divisor):" + this + that);
+
       if (this.denominator != that.denominator)
          return new Fraction((this.numerator * that.denominator) + (this.denominator * that.numerator), this.denominator * that.denominator);
       else
