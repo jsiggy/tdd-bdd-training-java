@@ -32,5 +32,5 @@ public abstract class GcdProviderTest {
       assertEquals(expected, actual);
    }
 
-   protected abstract SimpleGcdProvider createGcdProvider();
+   protected abstract GcdProvider createGcdProvider();
 }
