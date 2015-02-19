@@ -108,6 +108,15 @@ public class FractionTest {
    }
 
    @Test
+   public void canAddTwoFractionsWithSameDenominatorAndReduce() {
+      Fraction expected = new Fraction(5, 2);
+
+      Fraction result = new Fraction(5, 4).plus(new Fraction(5, 4));
+
+      assertEquals(expected, result);
+   }
+
+   @Test
    public void shouldDefaultToNonNullGcdProvider() {
       Fraction fraction = new Fraction(5, 10);
       Fraction expected = fraction.reduce();
