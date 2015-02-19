@@ -4,23 +4,23 @@ import lombok.EqualsAndHashCode;
 
 @EqualsAndHashCode
 public class Fraction {
-   private int integerValue;
+   private int numerator;
    private int denominator;
 
-   public Fraction(int integerValue) {
-      this.integerValue = integerValue;
+   public Fraction(int numerator) {
+      this.numerator = numerator;
    }
 
    public Fraction(int numerator, int denominator) {
-      this.integerValue = numerator;
+      this.numerator = numerator;
       this.denominator = denominator;
    }
 
    public Fraction plus(Fraction that) {
-      return new Fraction(this.integerValue + that.integerValue, this.denominator);
+      return new Fraction(this.numerator + that.numerator, this.denominator);
    }
 
    @Override public String toString() {
-      return integerValue + "/" + denominator;
+      return numerator + "/" + denominator;
    }
 }
