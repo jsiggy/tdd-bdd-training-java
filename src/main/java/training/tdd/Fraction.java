@@ -7,10 +7,11 @@ public class Fraction {
       this.integerValue = integerValue;
    }
 
-   public Fraction plus(Fraction fraction) {
-      if (fraction.integerValue != 0)
-         return fraction;
-      return this;
+   public Fraction plus(Fraction that) {
+      if (that.integerValue != 0)
+         return that;
+      else
+         return this;
    }
 
    @Override
