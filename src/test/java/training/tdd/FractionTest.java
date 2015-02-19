@@ -31,4 +31,13 @@ public class FractionTest {
 
       assertEquals(expected, result);
    }
+
+   @Test
+   public void canAddAnyIntegers() {
+      Fraction expected = new Fraction(7);
+
+      Fraction result = new Fraction(12).plus(new Fraction(-5));
+
+      assertEquals(expected, result);
+   }
 }
