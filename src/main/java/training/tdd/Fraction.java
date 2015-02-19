@@ -15,12 +15,8 @@ public class Fraction {
    public boolean equals(Object o) {
       if (this == o) return true;
       if (o == null || getClass() != o.getClass()) return false;
-
       Fraction fraction = (Fraction) o;
-
-      if (integerValue != fraction.integerValue) return false;
-
-      return true;
+      return integerValue == fraction.integerValue;
    }
 
    @Override public String toString() {
