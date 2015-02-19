@@ -8,7 +8,7 @@ public class Fraction {
    }
 
    public Fraction plus(Fraction fraction) {
-      return new Fraction(0);
+      return this;
    }
 
    @Override
@@ -21,5 +21,11 @@ public class Fraction {
       if (integerValue != fraction.integerValue) return false;
 
       return true;
+   }
+
+   @Override public String toString() {
+      return "Fraction{" +
+         "integerValue=" + integerValue +
+         '}';
    }
 }
