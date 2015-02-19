@@ -49,4 +49,13 @@ public class FractionTest {
 
       assertEquals(expected, result);
    }
+
+   @Test
+   public void canAddTwoFractionsWithSameDenominator() {
+      Fraction expected = new Fraction(3, 5);
+
+      Fraction result = new Fraction(1, 5).plus(new Fraction(2, 5));
+
+      assertEquals(expected, result);
+   }
 }

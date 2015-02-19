@@ -1,27 +1,25 @@
 package training.tdd;
 
+import lombok.EqualsAndHashCode;
+
+@EqualsAndHashCode
 public class Fraction {
    private int integerValue;
+   private int denominator;
 
    public Fraction(int integerValue) {
       this.integerValue = integerValue;
+   }
+
+   public Fraction(int numerator, int denominator) {
+      this.denominator = denominator;
    }
 
    public Fraction plus(Fraction that) {
       return new Fraction(this.integerValue + that.integerValue);
    }
 
-   @Override
-   public boolean equals(Object o) {
-      if (this == o) return true;
-      if (o == null || getClass() != o.getClass()) return false;
-      Fraction fraction = (Fraction) o;
-      return integerValue == fraction.integerValue;
-   }
-
    @Override public String toString() {
-      return "Fraction{" +
-         "integerValue=" + integerValue +
-         '}';
+      return integerValue + "/" + denominator;
    }
 }
