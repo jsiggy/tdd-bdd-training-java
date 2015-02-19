@@ -58,4 +58,13 @@ public class FractionTest {
 
       assertEquals(expected, result);
    }
+
+   @Test
+   public void shouldOutputImproperFractionRatherThanProper() {
+      Fraction expected = new Fraction(7, 5);
+
+      Fraction result = new Fraction(4, 5).plus(new Fraction(3, 5));
+
+      assertEquals(expected, result);
+   }
 }
