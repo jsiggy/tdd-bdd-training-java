@@ -85,6 +85,15 @@ public class FractionTest {
       assertEquals(expected, result);
    }
 
+   @Test
+   public void shouldAlwaysHaveNegativeValueOnNumerator() {
+      Fraction expected = new Fraction(-6, 5);
+
+      Fraction result = new Fraction(3, -5).plus(new Fraction(3, -5));
+
+      assertEquals(expected, result);
+   }
+
    @Test(expected = IllegalArgumentException.class)
    public void handlesDivideByZeroError() {
       new Fraction(1, 3).plus(new Fraction(8, 0));
