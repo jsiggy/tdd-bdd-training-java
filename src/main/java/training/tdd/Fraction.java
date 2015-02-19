@@ -25,7 +25,7 @@ public class Fraction {
       if (this.denominator != that.denominator)
          return new Fraction((this.numerator * that.denominator) + (this.denominator * that.numerator), this.denominator * that.denominator).reduce();
       else
-         return new Fraction(this.numerator + that.numerator, this.denominator).reduce();
+         return new Fraction((this.numerator * that.denominator) + (this.denominator * that.numerator), this.denominator * that.denominator).reduce();
    }
 
    @Override public String toString() {
