@@ -76,6 +76,15 @@ public class FractionTest {
       assertEquals(expected, result);
    }
 
+   @Test
+   public void canAddMoreThanTwoFractions() {
+      Fraction expected = new Fraction(5, 2);
+
+      Fraction result = new Fraction(1, 3).plus(new Fraction(2, 3)).plus(new Fraction(3, 2));
+
+      assertEquals(expected, result);
+   }
+
    @Test(expected = IllegalArgumentException.class)
    public void handlesDivideByZeroError() {
       new Fraction(1, 3).plus(new Fraction(8, 0));
