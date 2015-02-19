@@ -104,7 +104,7 @@ public class FractionTest {
    }
 
    @Test
-   public void shouldReduceDenominatorTo1WhenResultIsZero() {
+   public void shouldStillReduceDenominatorWhenResultIsZeroOverN() {
       Fraction expected = new Fraction(0, 1);
 
       Fraction result = new Fraction(-1, 3).plus(new Fraction(1, 3));
