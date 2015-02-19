@@ -33,6 +33,7 @@ public class Fraction {
    }
 
    public Fraction reduce() {
-      return new Fraction(numerator / gcdProvider.gcd(6, 4), denominator / gcdProvider.gcd(6, 4));
+      int gcd = gcdProvider.gcd(this.numerator, this.denominator);
+      return new Fraction(numerator / gcd, denominator / gcd);
    }
 }

@@ -98,13 +98,13 @@ public class FractionTest {
 
    @Test
    public void canReduceAFraction() {
-      Fraction fraction = new Fraction(6, 4);
+      Fraction fraction = new Fraction(8, 4);
       fraction.gcdProvider = mock(GcdProvider.class);
-      when(fraction.gcdProvider.gcd(6, 4)).thenReturn(2);
+      when(fraction.gcdProvider.gcd(8, 4)).thenReturn(4);
 
       Fraction reducedResult = fraction.reduce();
 
-      assertEquals(new Fraction(3, 2), reducedResult);
+      assertEquals(new Fraction(2, 1), reducedResult);
    }
 
    @Test
