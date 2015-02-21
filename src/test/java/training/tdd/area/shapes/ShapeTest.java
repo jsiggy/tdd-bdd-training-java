@@ -5,8 +5,7 @@ import org.junit.runner.RunWith;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import static org.junit.Assert.*;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 @RunWith(MockitoJUnitRunner.class)
 public abstract class ShapeTest {
@@ -21,6 +20,15 @@ public abstract class ShapeTest {
    @Test(expected = IllegalArgumentException.class)
    public void shouldNotAllowZeroSizedShape() {
       createShape(0.0, null);
+   }
+
+   @Test
+   public void shouldUseIdProviderForAllShapes() {
+      IdProvider idProvider = mock(IdProvider.class);
+
+      createShape(5, idProvider).id();
+
+      verify(idProvider, atLeastOnce()).next();
    }
 
    @Test
