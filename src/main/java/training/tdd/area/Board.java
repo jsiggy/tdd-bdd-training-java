@@ -25,11 +25,10 @@ public class Board {
    }
 
    public Board remove(long id) {
-      for (int i = 0; i < shapes.size(); i++) {
+      for (int i = shapes.size() - 1; i >= 0; i--) {
          Shape shape = shapes.get(i);
          if (shape.id() == id) {
-            shapes.remove(shape);
-            return this;
+            shapes.remove(shapes.get(i));
          }
       }
       return this;

@@ -56,7 +56,6 @@ public class BoardTest {
    @Test
    public void canRemoveASpecificShapeById() {
       Shape shape1 = mock(Shape.class);
-      when(shape1.id()).thenReturn(1l);
       Shape shape2 = mock(Shape.class);
       when(shape2.id()).thenReturn(1030l);
       Board board = new Board().add(shape1).add(shape2);
@@ -65,5 +64,27 @@ public class BoardTest {
 
       assertTrue(board.contains(shape1));
       assertFalse(board.contains(shape2));
+   }
+
+   @Test
+   public void canAddSameShapeTwice() {
+      Shape shape1 = mock(Shape.class);
+
+      Board board = new Board().add(shape1).add(shape1);
+
+      assertEquals(2, board.shapeCount());
+   }
+
+   @Test
+   public void shouldRemoveAllShapesWithSameId() {
+      Shape shape1 = mock(Shape.class);
+      when(shape1.id()).thenReturn(1030l);
+      Board board = new Board().add(shape1).add(shape1).add(shape1).add(shape1);
+
+      board.remove(shape1.id());
+
+      assertEquals(0, board.shapeCount());
+
+
    }
 }
