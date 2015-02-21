@@ -1,4 +1,4 @@
-package training.tdd.area;
+package training.tdd.area.shapes;
 
 public class Circle implements Shape {
 

@@ -3,6 +3,8 @@ package training.tdd.area;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.runners.MockitoJUnitRunner;
+import training.tdd.area.shapes.Shape;
+import training.tdd.area.shapes.Square;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
