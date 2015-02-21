@@ -2,9 +2,9 @@ Empty board area = 0
 Add a shape to board
 Add two shapes to the board
 Determine count of shapes on the board
---DONE--
 Remove the square from board
 Remove one specific square from the board
+--DONE--
 Add a circle to the board
 Board with 1 square = area of the square
 Board with 2 squares side 2 and side 3 = 13
