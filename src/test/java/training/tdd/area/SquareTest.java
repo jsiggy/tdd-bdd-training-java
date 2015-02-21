@@ -7,9 +7,9 @@ import static org.junit.Assert.*;
 public class SquareTest {
    @Test
    public void canComputeArea() {
-      Square square = createShape(5.0);
+      Shape shape = createShape(5.0);
 
-      double area = square.area();
+      double area = shape.area();
 
       assertEquals(5.0 * 5.0, area, 0.000001);
    }
@@ -24,7 +24,7 @@ public class SquareTest {
       createShape(0.0);
    }
 
-   private Square createShape(double length) {
+   private Shape createShape(double length) {
       return new Square(length);
    }
 }
