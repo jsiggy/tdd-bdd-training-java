@@ -5,7 +5,8 @@ import org.junit.runner.RunWith;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import static org.junit.Assert.*;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
 public class BoardTest {
@@ -105,5 +106,20 @@ public class BoardTest {
       double area = board.areaOfShapes();
 
       assertEquals(10.0, area, FUDGE_DELTA);
+   }
+
+   @Test
+   public void shouldReturnSummedAreaOfAllShapesAddedToTheBoard() {
+      Shape shape1 = mock(Shape.class);
+      when(shape1.area()).thenReturn(10.0);
+      Shape shape2 = mock(Shape.class);
+      when(shape2.area()).thenReturn(20.0);
+      Shape shape3 = mock(Shape.class);
+      when(shape3.area()).thenReturn(30.5);
+      Board board = new Board().add(shape1).add(shape2).add(shape3);
+
+      double area = board.areaOfShapes();
+
+      assertEquals(60.5, area, FUDGE_DELTA);
    }
 }

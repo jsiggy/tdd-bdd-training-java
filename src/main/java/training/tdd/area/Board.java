@@ -36,8 +36,7 @@ public class Board {
 
    public double areaOfShapes() {
       double area=0.0;
-      for (int i = 0; i < shapes.size(); i++) {
-         Shape shape = shapes.get(i);
+      for (Shape shape : shapes) {
          area += shape.area();
       }
       return area;
