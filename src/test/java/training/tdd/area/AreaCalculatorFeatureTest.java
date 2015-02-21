@@ -3,6 +3,7 @@ package training.tdd.area;
 import org.junit.Test;
 import training.tdd.area.shapes.Circle;
 import training.tdd.area.shapes.Square;
+import training.tdd.area.shapes.Triangle;
 
 import static org.junit.Assert.*;
 
@@ -43,11 +44,11 @@ public class AreaCalculatorFeatureTest {
    public void canRemoveAnObjectById() {
 
       Circle circleToRemove = new Circle(4);
-      Board board = new Board().add(new Circle(10)).add(new Square(2)).add(circleToRemove).add(new Circle((5)));
+      Board board = new Board().add(new Circle(10)).add(new Square(2)).add(circleToRemove).add(new Circle(5)).add(new Triangle(3, 5));
 
       board.remove(circleToRemove);
 
-      assertEquals(3, board.shapeCount());
+      assertEquals(4, board.shapeCount());
       assertFalse(board.contains(circleToRemove));
    }
 }
