@@ -33,4 +33,13 @@ public class Board {
       }
       return this;
    }
+
+   public double areaOfShapes() {
+      double area=0.0;
+      for (int i = 0; i < shapes.size(); i++) {
+         Shape shape = shapes.get(i);
+         area += shape.area();
+      }
+      return area;
+   }
 }
