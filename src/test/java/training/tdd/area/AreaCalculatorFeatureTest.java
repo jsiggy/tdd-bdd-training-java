@@ -13,6 +13,10 @@ public class AreaCalculatorFeatureTest {
 
    @Test
    public void shouldComputeAreaWithARealSquare() {
-      assertEquals(13.0, new Board().add(new Square(3)).add(new Square(2)).areaOfShapes(), FUDGE_DELTA);
+      Board board = new Board().add(new Square(3)).add(new Square(2));
+
+      double area = board.areaOfShapes();
+
+      assertEquals(13.0, area, FUDGE_DELTA);
    }
 }
