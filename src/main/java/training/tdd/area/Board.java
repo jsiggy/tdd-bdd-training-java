@@ -23,4 +23,15 @@ public class Board {
       shapes.remove(shape);
       return this;
    }
+
+   public Board remove(long id) {
+      for (int i = 0; i < shapes.size(); i++) {
+         Shape shape = shapes.get(i);
+         if (shape.id() == id) {
+            shapes.remove(shape);
+            return this;
+         }
+      }
+      return this;
+   }
 }

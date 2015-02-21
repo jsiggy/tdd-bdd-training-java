@@ -5,7 +5,7 @@ import org.junit.runner.RunWith;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import static org.junit.Assert.*;
-import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.*;
 
 @RunWith(MockitoJUnitRunner.class)
 public class BoardTest {
@@ -51,5 +51,19 @@ public class BoardTest {
       board.remove(shape);
 
       assertFalse(board.contains(shape));
+   }
+
+   @Test
+   public void canRemoveASpecificShapeById() {
+      Shape shape1 = mock(Shape.class);
+      when(shape1.id()).thenReturn(1l);
+      Shape shape2 = mock(Shape.class);
+      when(shape2.id()).thenReturn(1030l);
+      Board board = new Board().add(shape1).add(shape2);
+
+      board.remove(shape2.id());
+
+      assertTrue(board.contains(shape1));
+      assertFalse(board.contains(shape2));
    }
 }
