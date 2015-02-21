@@ -6,8 +6,8 @@ import static org.junit.Assert.*;
 
 public class SquareTest {
    @Test
-   public void shouldReturnSquareOfSideAsArea() {
-      Square square = new Square(5.0);
+   public void canComputeArea() {
+      Square square = createShape(5.0);
 
       double area = square.area();
 
@@ -16,11 +16,15 @@ public class SquareTest {
 
    @Test(expected = IllegalArgumentException.class)
    public void shouldNotAllowNegativeSizedShape() {
-      new Square(-5.0);
+      createShape(-5.0);
    }
 
    @Test(expected = IllegalArgumentException.class)
    public void shouldNotAllowZeroSizedShape() {
-      new Square(0.0);
+      createShape(0.0);
+   }
+
+   private Square createShape(double length) {
+      return new Square(length);
    }
 }
