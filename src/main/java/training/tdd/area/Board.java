@@ -18,4 +18,9 @@ public class Board {
    public boolean contains(Shape shape) {
       return shapes.contains(shape);
    }
+
+   public Board remove(Shape shape) {
+      shapes.remove(shape);
+      return this;
+   }
 }

@@ -42,4 +42,14 @@ public class BoardTest {
       Shape shape = mock(Shape.class);
       assertEquals(1, new Board().add(shape).shapeCount());
    }
+
+   @Test
+   public void canRemoveAShapeFromTheBoard() {
+      Shape shape = mock(Shape.class);
+      Board board = new Board().add(shape);
+
+      board.remove(shape);
+
+      assertFalse(board.contains(shape));
+   }
 }
