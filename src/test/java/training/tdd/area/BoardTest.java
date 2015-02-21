@@ -19,4 +19,10 @@ public class BoardTest {
       Shape shape = mock(Shape.class);
       assertTrue(new Board().add(shape).contains(shape));
    }
+
+   @Test
+   public void shouldNotContainAShapeThatWasNotAdded() {
+      Shape shape = mock(Shape.class);
+      assertFalse(new Board().contains(shape));
+   }
 }
