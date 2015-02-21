@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Board {
-   private Shape shape;
    private final List<Shape> shapes = new ArrayList<Shape>();
 
    public int shapeCount() {
@@ -13,7 +12,6 @@ public class Board {
 
    public Board add(Shape shape) {
       shapes.add(shape);
-      this.shape = shape;
       return this;
    }
 
