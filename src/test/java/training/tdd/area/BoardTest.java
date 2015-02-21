@@ -4,7 +4,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.runners.MockitoJUnitRunner;
 import training.tdd.area.shapes.Shape;
-import training.tdd.area.shapes.Square;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
@@ -123,11 +122,5 @@ public class BoardTest {
       double area = board.areaOfShapes();
 
       assertEquals(60.5, area, FUDGE_DELTA);
-   }
-
-   @Test
-   public void shouldComputeAreaWithARealSquare() {
-      // normally would only create this as part of a "feature" test (JBehave, Cucumber, Spock)
-      assertEquals(13.0, new Board().add(new Square(3)).add(new Square(2)).areaOfShapes(), FUDGE_DELTA);
    }
 }
