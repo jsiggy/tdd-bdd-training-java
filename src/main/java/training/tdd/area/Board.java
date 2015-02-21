@@ -7,7 +7,7 @@ public class Board {
    private final List<Shape> shapes = new ArrayList<Shape>();
 
    public int shapeCount() {
-      return 0;
+      return shapes.size();
    }
 
    public Board add(Shape shape) {

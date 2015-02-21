@@ -36,4 +36,10 @@ public class BoardTest {
       assertTrue(board.contains(shape1));
       assertTrue(board.contains(shape2));
    }
+
+   @Test
+   public void shouldIndicateNumberOfShapesOnTheBoard() {
+      Shape shape = mock(Shape.class);
+      assertEquals(1, new Board().add(shape).shapeCount());
+   }
 }
