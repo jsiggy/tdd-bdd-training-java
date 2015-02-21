@@ -6,7 +6,7 @@ public class Square implements Shape {
 
    public Square(double length) {
       if (length <= 0.0)
-         throw new IllegalArgumentException("Length must be greater than 0");
+         throw new IllegalArgumentException("Square side must be greater than 0: " + length);
       this.length = length;
    }
 

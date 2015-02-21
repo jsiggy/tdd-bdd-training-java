@@ -2,17 +2,9 @@ package training.tdd.area;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public abstract class ShapeTest {
    @Test
-   public void canComputeArea() {
-      Shape shape = createShape(5.0);
-
-      double area = shape.area();
-
-      assertEquals(5.0 * 5.0, area, 0.000001);
-   }
+   public abstract void canComputeArea();
 
    @Test(expected = IllegalArgumentException.class)
    public void shouldNotAllowNegativeSizedShape() {
