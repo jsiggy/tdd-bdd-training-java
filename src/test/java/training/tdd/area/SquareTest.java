@@ -18,4 +18,9 @@ public class SquareTest {
    public void shouldNotAllowNegativeSizedShape() {
       new Square(-5.0);
    }
+
+   @Test(expected = IllegalArgumentException.class)
+   public void shouldNotAllowZeroSizedShape() {
+      new Square(0.0);
+   }
 }
