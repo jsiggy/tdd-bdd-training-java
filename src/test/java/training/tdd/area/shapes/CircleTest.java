@@ -8,14 +8,14 @@ public class CircleTest extends ShapeTest {
    @Test
    public void canComputeArea() {
       double radius = 5.0;
-      Shape shape = createShape(radius);
+      Shape shape = createShape(radius, null);
 
       double area = shape.area();
 
       assertEquals(Math.PI * radius * radius, area, 0.000001);
    }
 
-   @Override protected Shape createShape(double radius) {
-      return new Circle(radius);
+   @Override protected Shape createShape(double radius, IdProvider idProvider) {
+      return new Circle(radius, idProvider);
    }
 }
