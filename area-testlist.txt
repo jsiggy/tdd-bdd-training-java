@@ -1,0 +1,18 @@
+Add a square to board
+Remove the square from board
+Add two squares to the board
+Remove one specific square from the board
+Add a circle to the board
+Empty board area = 0
+Board with 1 square = area of the square
+Board with 2 squares side 2 and side 3 = 13
+Board with 1 squares side 5 and circle radius 4 = 75.27
+Square with side 2 = 4
+Square with side 3 = 9
+Square with negative side = error
+Area of circle
+Area of rectangle
+Area of triangle
+A square with side 2 only half inside the board = 2
+2 squares side 3 completely overlapping = 9
+a circle 3 at 1,2 and a square 5 at 2, 2 (partially overlapping) = ?
