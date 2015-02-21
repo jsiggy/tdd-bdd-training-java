@@ -14,6 +14,8 @@ public class TriangleTest extends ShapeTest {
    }
 
    @Override protected Shape createShape(double length, double height, IdProvider idProvider) {
-      return new Triangle(length, height, idProvider);
+      Triangle triangle = new Triangle(length, height);
+      triangle.idProvider = idProvider;
+      return triangle;
    }
 }

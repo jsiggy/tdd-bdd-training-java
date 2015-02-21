@@ -17,6 +17,8 @@ public class CircleTest extends ShapeTest {
    }
 
    @Override protected Shape createShape(double radius, double optionalDimension2, IdProvider idProvider) {
-      return new Circle(radius, idProvider);
+      Circle circle = new Circle(radius);
+      circle.idProvider = idProvider;
+      return circle;
    }
 }

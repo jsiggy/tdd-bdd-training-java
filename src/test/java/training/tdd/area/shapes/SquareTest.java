@@ -17,6 +17,8 @@ public class SquareTest extends ShapeTest {
    }
 
    @Override protected Shape createShape(double length, double optionalDimension2, IdProvider idProvider) {
-      return new Square(length, idProvider);
+      Square square = new Square(length);
+      square.idProvider = idProvider;
+      return square;
    }
 }
