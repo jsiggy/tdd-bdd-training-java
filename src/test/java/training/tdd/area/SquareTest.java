@@ -7,6 +7,10 @@ import static org.junit.Assert.*;
 public class SquareTest {
    @Test
    public void shouldReturnSquareOfSideAsArea() {
-      assertEquals(5.0 * 5.0, new Square(5.0).area(), 0.000001);
+      Square square = new Square(5.0);
+
+      double area = square.area();
+
+      assertEquals(5.0 * 5.0, area, 0.000001);
    }
 }
