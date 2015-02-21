@@ -122,4 +122,10 @@ public class BoardTest {
 
       assertEquals(60.5, area, FUDGE_DELTA);
    }
+
+   @Test
+   public void shouldComputeAreaWithARealSquare() {
+      // normally would only create this as part of a "feature" test (JBehave, Cucumber, Spock)
+      assertEquals(13.0, new Board().add(new Square(3)).add(new Square(2)).areaOfShapes(), FUDGE_DELTA);
+   }
 }
