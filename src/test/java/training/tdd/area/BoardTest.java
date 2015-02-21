@@ -84,7 +84,5 @@ public class BoardTest {
       board.remove(shape1.id());
 
       assertEquals(0, board.shapeCount());
-
-
    }
 }

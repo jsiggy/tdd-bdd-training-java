@@ -28,7 +28,7 @@ public class Board {
       for (int i = shapes.size() - 1; i >= 0; i--) {
          Shape shape = shapes.get(i);
          if (shape.id() == id) {
-            shapes.remove(shapes.get(i));
+            shapes.remove(shape);
          }
       }
       return this;
