@@ -25,4 +25,15 @@ public class BoardTest {
       Shape shape = mock(Shape.class);
       assertFalse(new Board().contains(shape));
    }
+
+   @Test
+   public void canAddMultipleShapes() {
+      Shape shape1 = mock(Shape.class);
+      Shape shape2 = mock(Shape.class);
+
+      Board board = new Board().add(shape1).add(shape2);
+
+      assertTrue(board.contains(shape1));
+      assertTrue(board.contains(shape2));
+   }
 }
