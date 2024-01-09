@@ -21,7 +21,7 @@
         <maven-compiler-plugin.version>3.12.1</maven-compiler-plugin.version>
         <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
         <!--        <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>-->
-        <mockito.version>4.11.0</mockito.version>
+        <mockito.version>5.8.0</mockito.version>
         <parallel.tests>4</parallel.tests>
         <pitest.version>1.15.3</pitest.version>
         <pitest-junit5-plugin.version>1.2.1</pitest-junit5-plugin.version>
